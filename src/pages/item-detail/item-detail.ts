@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavParams, NavController } from 'ionic-angular';
+import { NavParams, NavController, Events } from 'ionic-angular';
 
 import { OrderDetailPage } from '../order-detail/order-detail';
 
@@ -15,7 +15,7 @@ export class ItemDetailPage {
   photo;
   description;
 
-  constructor(public navParams: NavParams, public navCtrl: NavController) {
+  constructor(public navParams: NavParams, public navCtrl: NavController, public events: Events) {
 
   }
 
@@ -28,14 +28,15 @@ export class ItemDetailPage {
   }
 
   sendOrder(quantity) {
-    this.navCtrl.push(OrderDetailPage, {
+      let newItem = {
       name: this.name,
       price: this.price,
       category: this.category,
       photo: this.photo,
-      description: this.description,
-      quantity: quantity
-    });
+      description: this.description
+    };
+
+    this.events.publish('shareObject', newItem, quantity);
   }
 
 }

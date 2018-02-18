@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 
 /**
  * Generated class for the OrderDetailPage page.
@@ -20,17 +20,26 @@ export class OrderDetailPage {
   photo;
   description;
   quantity;
+  total;
+  date;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
+    events.subscribe('shareObject', (item, quantity) => {
+      this.name = item.name;
+      this.price = item.price;
+      this.category = item.category;
+      this.photo = item.photo;
+      this.description = item.description;
+      this.quantity = quantity;
+      var a = Number(item.price);
+      var b = Number(quantity);
+      var yes = a * b;
+      this.total = yes;
+      this.date = new Date();
+  });
   }
   
   ionViewDidLoad() {
-    this.name = this.navParams.get('name');
-    this.price = this.navParams.get('price');
-    this.category = this.navParams.get('category');
-    this.photo = this.navParams.get('photo');
-    this.description = this.navParams.get('description');
-    this.quantity = this.navParams.get('quantity');
   }
 
 }
