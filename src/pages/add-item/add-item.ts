@@ -7,7 +7,10 @@ import { NavController, ViewController } from 'ionic-angular';
 })
 export class AddItemPage {
 
-  title;
+  name;
+  price;
+  category;
+  photo;
   description;
 
   constructor(public navCtrl: NavController, public view: ViewController) {

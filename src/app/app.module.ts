@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { AddItemPage } from '../pages/add-item/add-item';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { TabsPage } from '../pages/tabs/tabs';
+import { OrderDetailPage } from '../pages/order-detail/order-detail';
 import { Data } from '../providers/data';
 
 @NgModule({
@@ -18,7 +19,8 @@ import { Data } from '../providers/data';
     HomePage,
     AddItemPage,
     TabsPage,
-    ItemDetailPage
+    ItemDetailPage,
+    OrderDetailPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { Data } from '../providers/data';
     HomePage,
     AddItemPage,
     TabsPage,
-    ItemDetailPage
+    ItemDetailPage,
+    OrderDetailPage
   ],
   providers: [
     StatusBar,

@@ -19,17 +19,21 @@
 
     <ion-item>
       <ion-label floating>Item Price</ion-label>
-      <ion-input type="text" [(ngModel)]="price"></ion-input>
+      <ion-input type="number" [(ngModel)]="price"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Item Category</ion-label>
-      <ion-input type="text" [(ngModel)]="category"></ion-input>
+      <ion-select [(ngModel)]="category">
+        <ion-option value="Dish">Dish</ion-option>
+        <ion-option value="Desert">Desert</ion-option>
+        <ion-option value="Drink">Drink</ion-option>
+      </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Item Photo URL</ion-label>
-      <ion-input type="text" [(ngModel)]="photo"></ion-input>
+      <ion-input type="url" [(ngModel)]="photo"></ion-input>
     </ion-item>
 
     <ion-item>
