@@ -14,17 +14,20 @@
 
 
 <ion-content padding>
-   <ion-card>
-     <ion-card-content>
-       <img src="{{photo}}">
-       {{quantity}} x 
-       {{name}}
-     </ion-card-content>
-     <ion-card-content>
-       Order Place At: <br/>{{date}}
-     </ion-card-content>
-     <ion-card-content>
-        Total: ${{total}}
-     </ion-card-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item (click)="viewItem(item)">
+          <img src="{{photo}}">
+          <br/>
+          {{quantity}} x 
+          {{name}}
+        </ion-item>
+      </ion-list>
+      Order Place At: <br/>{{date}}
+      <br/> 
+      <br/>
+      Total: ${{total}}
+    </ion-card-content>
   </ion-card>
 </ion-content>

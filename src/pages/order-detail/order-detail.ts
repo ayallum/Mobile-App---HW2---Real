@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, Events } from 'ionic-angular';
 
+import { ItemDetailPage } from '../item-detail/item-detail';
+
 /**
  * Generated class for the OrderDetailPage page.
  *
@@ -40,6 +42,19 @@ export class OrderDetailPage {
   }
   
   ionViewDidLoad() {
+  }
+
+  viewItem(item) {
+    let newItem = {
+      name: this.name,
+      price: this.price,
+      category: this.category,
+      photo: this.photo,
+      description: this.description
+    };
+    this.navCtrl.push(ItemDetailPage, {
+      item: newItem
+    });
   }
 
 }
