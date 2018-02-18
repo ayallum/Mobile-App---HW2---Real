@@ -14,11 +14,23 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class OrderDetailPage {
 
+  name;
+  price;
+  category;
+  photo;
+  description;
+  quantity;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OrderDetailPage');
+    this.name = this.navParams.get('name');
+    this.price = this.navParams.get('price');
+    this.category = this.navParams.get('category');
+    this.photo = this.navParams.get('photo');
+    this.description = this.navParams.get('description');
+    this.quantity = this.navParams.get('quantity');
   }
 
 }

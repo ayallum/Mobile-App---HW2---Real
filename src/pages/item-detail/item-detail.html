@@ -1,15 +1,38 @@
 <ion-header>
   <ion-navbar color="secondary">
     <ion-title>
-      {{title}}
+      {{name}}
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="sendOrder(item,quantity)"><ion-icon name="checkmark-circle"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
     <ion-card-content>
+      <ion-item>
+        <ion-label>Quantity</ion-label>
+        <ion-range min="1" max="10" snaps="true" [(ngModel)]="quantity">
+          <ion-label range-left>1</ion-label>
+          <ion-label range-right>10</ion-label>
+        </ion-range>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      ${{price}}
+    </ion-card-content>
+    <ion-card-content>
+      {{category}}
+    </ion-card-content>
+    <ion-card-content>
       {{description}}
+    </ion-card-content>
+    <ion-card-content>
+      <img src="{{photo}}">
     </ion-card-content>
   </ion-card>
 </ion-content>
